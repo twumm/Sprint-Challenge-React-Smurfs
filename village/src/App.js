@@ -37,6 +37,18 @@ class App extends Component {
     }
   };
 
+  deleteSmurf = async (event, id) => {
+    event.preventDefault();
+    try {
+      await axios.delete(`${smurfsApiUrl}/${id}`)
+        .then(() => this.getAllSmurfs());
+    } catch (error) {
+      this.setState({ error: error });
+    } finally {
+      this.setState({ loading: false });
+    }
+  }
+
   render() {
     return (
       <Router>
@@ -68,6 +80,7 @@ class App extends Component {
               <Smurfs
                 {...props}
                 smurfs={this.state.smurfs}
+                deleteSmurf={this.deleteSmurf}
               />
             )}
           />
