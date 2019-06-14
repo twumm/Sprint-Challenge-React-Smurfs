@@ -41,7 +41,13 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <nav>
+          <nav
+            style={{
+              display: 'flex',
+              justifyContent: 'space-around',
+              margin: '20px'
+            }}
+          >
             <NavLink
               to="/"
               exact
