@@ -41,18 +41,20 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <NavLink
-            to="/"
-            exact
-          >
-            All Smurfs
-          </NavLink>
+          <nav>
+            <NavLink
+              to="/"
+              exact
+            >
+              All Smurfs
+            </NavLink>
 
-          <NavLink
-            to="/smurf-form"
-          >
-            Add Smurf
-          </NavLink>
+            <NavLink
+              to="/smurf-form"
+            >
+              Add Smurf
+            </NavLink>
+          </nav>
 
           <Route
             path="/"
