@@ -29,8 +29,25 @@ In this challenge, you will create a Single Page Application complete with Clien
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] Explain the differences between `client-side routing` and `server-side routing`.
+
+1. Server-side routing means requests made by the user are sent to the server and the results are brough back to the browser.
+Client-side routing means content/routes are changed without sending a request to a server. This change occurs within the user's browser.
+2. Client-side routing makes single-page applications possible - ie, it gives the user a sense of not always refreshing the browser to get new information. Simply, they get to navigate all around the website they are on, in a single page. 
+
+
 - [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
+
+1. Create - POST method -> adds a new data to the server/api
+2. Read - GET method -> retrieves data from the server
+3. Update - PUT method -> updates a data item on the server/api
+4. Delete - DELETE method -> deletes a data item on the server/api
+
+
 - [ ] Mention three tools we can use to make AJAX requests.
+
+1. Axios
+2. JavaScript native fetch method
+3. jQuery
 
 
 ## Project Set Up
