@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
+const smurfsApiUrl = 'http://localhost:3333/smurfs';
 
 class SmurfForm extends Component {
   constructor(props) {
@@ -6,13 +9,30 @@ class SmurfForm extends Component {
     this.state = {
       name: '',
       age: '',
-      height: ''
+      height: '',
+      error: '',
+      loading: ''
     };
   }
 
-  addSmurf = event => {
+  addSmurf = async event => {
     event.preventDefault();
     // add code to create the smurf using the api
+    const newSmurf = {
+      name: this.state.name,
+      age: this.state.age,
+      height: this.state.height
+    }
+
+    this.setState({ loading: true });
+    try {
+      await axios.post(smurfsApiUrl, newSmurf)
+        .then(() => this.props.getAllSmurfs());
+    } catch (error) {
+      this.setState({ error: error });
+    } finally {
+      this.setState({ loading: false });
+    }
 
     this.setState({
       name: '',
