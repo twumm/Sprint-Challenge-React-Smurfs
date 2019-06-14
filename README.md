@@ -30,9 +30,11 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Explain the differences between `client-side routing` and `server-side routing`.
 
-1. Server-side routing means requests made by the user are sent to the server and the results are brough back to the browser.
-Client-side routing means content/routes are changed without sending a request to a server. This change occurs within the user's browser.
-2. Client-side routing makes single-page applications possible - ie, it gives the user a sense of not always refreshing the browser to get new information. Simply, they get to navigate all around the website they are on, in a single page. 
+1. Server-side routing(SSR) means requests made by the user are sent to the server and the results are brough back to the browser.
+Client-side routing(CSR) means content/routes are changed without sending a request to a server. This change occurs within the user's browser.
+2. CSR makes single-page applications possible - ie, it gives the user a sense of not always refreshing the browser to get new information. Simply, they get to navigate all around the website they are on, in a single page. 
+3. Initial page load of SSR tends to be faster than client-side routing. On SSR, pages are loaded per each route, whiles on CSR, almost all pages get loaded on the user's first visit(this, can however be reduced with lazy-loading - still learning what that is all about :) ).
+4. CSR rendering however tends to be fast after the initial page load. The user simply switches between routes like they will do in an app - little to no time waiting for content as content has already been loaded.
 
 
 - [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
