@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   getAllSmurfs = async () => {
-    this.setState({ loading: false });
+    this.setState({ loading: true });
     try {
       const smurfsData = await axios.get(smurfsApiUrl);
       this.setState({ smurfs: smurfsData.data });
@@ -39,7 +39,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SmurfForm />
+        <SmurfForm getAllSmurfs={this.getAllSmurfs} />
         <Smurfs smurfs={this.state.smurfs} />
       </div>
     );
