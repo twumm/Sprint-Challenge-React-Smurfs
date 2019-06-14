@@ -20,11 +20,15 @@ class App extends Component {
   // Notice what your map function is looping over and returning inside of Smurfs.
   // You'll need to make sure you have the right properties on state and pass them down to props.
 
+  componentDidMount() {
+    this.getAllSmurfs();
+  }
+
   getAllSmurfs = async () => {
     this.setState({ loading: false });
     try {
       const smurfsData = await axios.get(smurfsApiUrl);
-      this.setState({ smurfs: smurfsData });
+      this.setState({ smurfs: smurfsData.data });
     } catch (error) {
       this.setState({ error: error });
     } finally {
